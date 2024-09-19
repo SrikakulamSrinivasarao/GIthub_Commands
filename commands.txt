@@ -1,0 +1,134 @@
+
+1) git init --> Initialize a new git repo in the current directory.
+2) git clone <Github repo URL> --> To clone an existing  repository.
+3) git add <file name> --> To add a specific file to the staging area.
+4) git add . --> To add all the files to staging area.
+5) git commit --> To commit the staged changes.
+6) git commit -m "[message]" --> To commit the staged with the message.
+7) git status --> To display the state of working directory and the staging area.
+8) git log --> To view the commit history.
+9) git log --oneline --> To view the commit history in single line.
+10) git diff --> To show the changes between commits, the working directory and the index.
+11) git remote add <name> <git hub repo URL> --> To add a remote repository by name.
+12) git remote -v --> To list all the remotes with their URLs.
+13) git remote remove <name> --> To remove the remote.
+14) git rm <file> --> To remove a file from the working directory and stage the removal.
+15) git fetch --> To retrieve updates from the remote without merging them.
+16) git pull <URL> --> To pull repository data using url.
+17) git pull <remote name> <branch name> --> To fetch and merge changes from the remote repository.
+=================
+Push commands
+=================
+18) git push <remote name> <branch name> --> To push the local changes to a remote repository.
+19) git push -u <remote name> <branch name> --> The -u (or --set -upstream) option sets the remote branch as the default for future pushes.
+20) git push --force <remote name> <branch name> --> The --force is used whenever we are having local branch conflicts with the remote branch.
+21) git push <remote name> <tagname> --> Git tags also used push to the remote.
+22) git push <remote tag> --tags --> To push all tags.
+=================
+Merge command
+=================
+23) git merge <branch name> --> Merge the specified branch with current branch.
+=================
+Branching commands
+=================
+24) git branch <branch name> --> To create new branch.
+25) git branch --> To list all local branches.
+26) git branch -a --> To list all local branches as well as remote branches.
+27) git branch -d <branch name> --> To delete a local branch (Will not delete if it contains unmerged changes).
+28) git branch -D <branch name> --> To Force delete a local brnach , even if it has unmerged changes.
+29) git checkout -b <branch name> --> To create and switch to the new branch.
+30) git checkout --track <remote name/branch name> --> To create a local branch and set it to track a remote branch.
+31) git push <remote name> --delete <branch name> --> To Delete a branch from a remote repository(We can use -d also).
+32) git switch <branch name> --> To switch from current branch to specified branch.
+=================
+Reset , checkout commands
+=================
+33) git reset <file> --> To unstage a file without removing changes.
+34) git reset --hard <commit-id> --> To Reset the working directory and index to a specific commit, discarding changes.
+35) git reset --hard HEAD~<numbers> --> To Undo the commits based on the HEAD it will reduce commits  based on head.
+36) git reset --soft <commit-id> --> To Move the HEAD to the specified commit, keeping changes staged.
+37) git reset --soft HEAD~<numbers> --> To move the HEAD to the specified number, keeping changes staged.
+38) git reset --mixed <commit-id> --> Move the HEAD to the specified commit and unstage the changes.
+39) git checkout <commit-id> --<file> --> To checkout a specific file from a previous commit.
+=================
+Revert commands
+=================
+40) git revert <commit-id> --> To Create a new commit that undoes the changes from a previous commit.
+41) git revert <commit-id> <commit-id> --> To revert multiple commits.
+42) git revert --no-commit <commit-id> --> To skip the commit message editor(e.g., in scripts) [We can use -n instead of --no-commmit].
+=================
+Tag commands
+=================
+43) git tag <tag name> --> To create a new tag to the current commit.
+44) git tag -d <tag name> --> To Delete a local tag.
+45) git push <remote name> --delete <tag name> --> To delete a tag from a remote repository.
+46) git push <remote name> <tag name> --> To push a tag to remote repository.
+47) git tag -a <tag-name> -m "[message]" --> To create an annotated tag with a message (For tag names if you want you can give versions).
+=================
+Normal commands
+=================
+48) git show <commit id> --> To show details of a specific commit.
+49) git clean --> To remove untracked files from the working directory.
+=================
+Rebase commands
+=================
+50) git rebase <branch name> --> To Apply commits from one branch to another branch.
+51) git rebase --continue --> To continue the rebase process after resolving conflicts.
+52) git rebase --abort --> To Abort a rebase operation and return to previous State.
+53) git rebase -i <commit-id> --> Interactively rebase the commits starting from the specified commit.
+=================
+Merge commands
+=================
+54) git merge --abort --> To abort the current merge and return to the previous state.
+55) git merge --no -off <branch name> --> To Merge a branch without fast-forwarding (creates a merge commit).
+=================
+Cherry-Pick commands
+=================
+56) git cherry-pick <commit-id> --> To Apply a specific commit from one branch onto the current branch.
+57) git cherry-pick --abort --> To Abort a cherry-pick operation if conflicts arise.
+=================
+Stash commands
+=================
+58) git stash --> To stop the changes in the current branch.
+59) git stash list --> To show the list of stashes.
+60) git stash apply --> To resume the changes of all the stash but it won't remove from stash list.
+61) git stash apply <stash-id> --> To apply stash based on specified stash-id.  
+62) git stash pop --> To resume the changes of all the stash and also it removes the stash from list.
+63) git stash pop <stash-id> --> To pop stash based on the stash id.
+64) git stash drop --> To delete the stash list before applying the stash.
+65) git stash branch <branch-name> --> Create a new branch from a stash and apply the stashed changes.
+66) git stash drop <stash-id> --> To drop speicified stash based on id.
+67) git stash -u --> To stash untracked files.
+68) git stash save "[message]" --> To stash with message.
+69) git stash clear --> To remove all stashed entries.
+70) git clean -fd --> Forcefully remove untracked files and directories from the working directory.
+=================
+History,Revision commands
+=================
+71) git reflog --> view the history of all reference updates.
+72) git log --graph --oneline --all  -->  Display a graphical representation of the branch and merge history.
+73) git log -p --> To show commit history along with the changes introduced in each commit.
+74) git diff <commit-id> <commit-id> --> To compare the differences between two commits.
+75) git shortlog -sn --> To Summarize the number of commits per author.
+=================
+Configuration commands
+=================
+76) git config --global user.name "username" --> To set our user name gloablly.
+77) git config --global user.email "useremail@gmail.com" --> To set our user email gloablly.
+78) git config --global --unset user.name "username" --> To delete our user name gloablly.
+79) git config --global --unset user.email "useremail@gmail.com" --> To delete our user email gloablly.
+80) git config user.name "username" --> To set our user name locally.
+81) git config user.email "useremail@gmail.com" --> To set our user email locally.
+82) git config --unset user.name "username" --> To delete our user name locally.
+83) git config user.email "useremail@gmail.com" --> To delete our user email locally.
+84) git config --global --edit --> To edit configuration details globally.
+85) git config --edit --> To edit configurations locally.
+=================
+Miscellaneous commands
+=================
+86) git bisect start --> Begin a binary search to identify the commit that introduced a bug.
+87) git bisect good <commit> --> Mark a commit as good during a bisect search.
+88) git bisect bad <commit> --> Mark a commit as bad during a bisect search.
+89) git archive --format=zip --output=<file.zip> <branch> --> Create a zip archive of the contents of a branch.
+90) git blame <file> --> Show the last modification for each line in a file.
+91) git describe --tags --> Show the most recent tag that is reachable from the current commit.

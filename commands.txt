@@ -132,3 +132,16 @@ Miscellaneous commands
 89) git archive --format=zip --output=<file.zip> <branch> --> Create a zip archive of the contents of a branch.
 90) git blame <file> --> Show the last modification for each line in a file.
 91) git describe --tags --> Show the most recent tag that is reachable from the current commit.
+=================
+commit commands
+=================
+92) git commit --amend --> To edit the recent commit message inside vi editor.
+93) git commit --amend -m "[message]" --> To ammend with a message.
+94) git log --name-only --> This will display the commit along with the files associated with the specified commit.
+95) git ls -files --> Display files in staging area.
+=================
+Removing commands
+=================
+96) rm <file name> --> To remove files from a working directory(It is an linux command).
+97) git rm --cached <file name> --> To remove files from staging area. 
+98) git restore --staged <file name> --> To unstage files from local repository to working directory when we deleted file from working directory.

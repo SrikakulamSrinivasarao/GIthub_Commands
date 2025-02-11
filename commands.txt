@@ -145,3 +145,10 @@ Removing commands
 96) rm <file name> --> To remove files from a working directory(It is an linux command).
 97) git rm --cached <file name> --> To remove files from staging area. 
 98) git restore --staged <file name> --> To unstage files from local repository to working directory when we deleted file from working directory.
+
+
+
+
+99) git reflog --> Reference logs to take back the lost commits 
+100) git stash push -m "Stashing a specific file" -- <file> --> to push the single file to stashing area
+# There is no multiple stashing areas like branches it will be only one stashing area

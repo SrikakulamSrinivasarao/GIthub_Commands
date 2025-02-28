@@ -35,11 +35,15 @@ Branching commands
 25) git branch --> To list all local branches.
 26) git branch -a --> To list all local branches as well as remote branches.
 27) git branch -d <branch name> --> To delete a local branch (Will not delete if it contains unmerged changes).
-28) git branch -D <branch name> --> To Force delete a local brnach , even if it has unmerged changes.
+28) git branch -D <branch name> --> To Force delete a local branch , even if it has unmerged changes.
 29) git checkout -b <branch name> --> To create and switch to the new branch.
 30) git checkout --track <remote name/branch name> --> To create a local branch and set it to track a remote branch.
 31) git push <remote name> --delete <branch name> --> To Delete a branch from a remote repository(We can use -d also).
 32) git switch <branch name> --> To switch from current branch to specified branch.
+--) git branch -M <new_branch_name> --> To rename the current branch 
+--) git push --delete <branch_name> --> To remove the branch from github repository
+--) git fetch --prune --> To fetch latest changes
+--) git branch -r | grep -v '\->' | awk '{print $1}' | sed 's/origin\///' | xargs -I {} git checkout -b {} origin/{} --> To pull all the branches from the repository locally 
 =================
 Reset , checkout commands
 =================

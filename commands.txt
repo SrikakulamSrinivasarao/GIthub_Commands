@@ -36,13 +36,14 @@ Branching commands
 26) git branch -a --> To list all local branches as well as remote branches.
 27) git branch -d <branch name> --> To delete a local branch (Will not delete if it contains unmerged changes).
 28) git branch -D <branch name> --> To Force delete a local branch , even if it has unmerged changes.
+--> git push <remote name> :<branch name>  --> To delete a branch from remote repository.
 29) git checkout -b <branch name> --> To create and switch to the new branch.
 30) git checkout --track <remote name/branch name> --> To create a local branch and set it to track a remote branch.
 31) git push <remote name> --delete <branch name> --> To Delete a branch from a remote repository(We can use -d also).
 32) git switch <branch name> --> To switch from current branch to specified branch.
 --) git branch -M <new_branch_name> --> To rename the current branch 
 --) git push --delete <branch_name> --> To remove the branch from github repository
---) git fetch --prune --> To fetch latest changes
+--) git fetch --prune --> To made any changes made in remote but not in local (For example if we delete a file or branch in remote but not in local we use this command to apply the remote changes automatically). 
 --) git branch -r | grep -v '\->' | awk '{print $1}' | sed 's/origin\///' | xargs -I {} git checkout -b {} origin/{} --> To pull all the branches from the repository locally 
 =================
 Reset , checkout commands
@@ -64,10 +65,19 @@ Revert commands
 Tag commands
 =================
 43) git tag <tag name> --> To create a new tag to the current commit.
+--> git tag  -a <tag-name> -m "[message]" --> To create an annotated tag with a message (For tag names if you want you can give versions).
+--> git checkout -b <branch name> <tag name> --> to create a tag with branch name.(Because we cant checkout to tag but we can checkout to branch which is tagged)
 44) git tag -d <tag name> --> To Delete a local tag.
+--> git tag --delete <tag name> --> To delete a local branch.
+--> git tag =d <tag name1> <tag name2> <tag name3> --> To delete multiple tags locally.
 45) git push <remote name> --delete <tag name> --> To delete a tag from a remote repository.
+--> git push <remote name> -d <tag name>  --> To delete a tag from remote repository.
+--> git push <remote name> :<tag name>  --> To delete a tag from remote repository.
+--> git push <remote name> -d <tag name1> <tag name2> <tag name3> --> To delete multiple tags from repository.
 46) git push <remote name> <tag name> --> To push a tag to remote repository.
-47) git tag -a <tag-name> -m "[message]" --> To create an annotated tag with a message (For tag names if you want you can give versions).
+47) git tag --> To see list of tags.
+--> git show <tagname> --> To see detailed info of selected tag.
+--> git tag -l "v1.*" --> To search tag names starting with v1.
 =================
 Normal commands
 =================
